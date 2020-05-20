@@ -1,0 +1,42 @@
+<%- include("header") -%>
+<div class="row">
+    <div class="col">
+        <div class="heading">
+            <%= listTitle%>
+        </div>
+    </div>
+</div>
+<div class="container box">
+    <div class="row justify-content-center p-3">
+        <% if (newListItems.length > 0) { %>
+        <% newListItems.forEach(function(item){ %>
+        <div class="col-3">
+            <form action="/delete" method="post">
+                <div class="item p-2">
+                    <input class="px-5" type="checkbox" name="checkbox" value="<%=item._id%>" onChange="this.form.submit()" />
+                    <input type="hidden" name="listName" value="<%= listTitle %>"></input>
+                </div>
+            </form>
+        </div>
+        <div class="col-9">
+            <p class="px-5 h5 d-inline">
+                <%=  item.name %>
+            </p>
+        </div>
+        <% }); } else { %>
+        <div class="item py-2">
+            <p class="">None</p>
+        </div>
+        <%}%>
+    </div>
+    <hr class="solid">
+    <div class="row">
+        <div class="col add-button p-1">
+            <form class="item" action="/add" method="post">
+                <input type="text" name="newItem" class="add-label px-5" placeholder="Add a task" autocomplete="on" autofocus required />
+                <button type="submit" class="round-button" name="list" value="<%= listTitle %>">+</button>
+            </form>
+        </div>
+    </div>
+</div>
+<%- include("footer") -%>

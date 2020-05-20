@@ -1,0 +1,134 @@
+:root {
+    --main-bg-color: #f7fbfc;
+    --secondary-color: #d6e6f2;
+    --spindle: #b9d7ea;
+    --polo-blue: #769fcd;
+}
+
+
+html {
+    background-color: var(--main-bg-color);
+    font-family: 'Helvetica Neue', sans-serif;
+    padding-bottom: 50px;
+}
+
+body {
+    background-color: var(--main-bg-color);
+    font-family: "Montserrat", sans-serif;
+    margin-bottom: -50px;
+}
+
+h1 {
+    color: #fff;
+    padding: 10px;
+}
+
+
+.box {
+    width: 80%;
+    margin: 50px auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+}
+
+#heading {
+    min-height: 80px;
+    background-color: #609EA2;
+    border-radius: 15px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.heading {
+    width: 80%;
+    font-size: 30px;
+    margin: 2rem 10%;
+    font-weight: 600;
+    color: var(--polo-blue);
+    background-color: var(--secondary-color);
+    text-align: center;
+    padding: 1.5rem;
+    line-height: 80px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px -5px #888888;
+}
+
+
+.card {
+    border: 1px solid var(--secondary-color);
+    margin: 5% 10%;
+    padding-top: 10px;
+    box-shadow: 1px 1px #888888;
+}
+
+
+.solid {
+    border-top: 1px solid #bbb;
+}
+
+
+.item {
+    padding: 2rem;
+    text-align: center;
+    border-bottom: 1px solid #F1F1F1;
+}
+
+.item:last-child {
+    border-bottom: 0;
+}
+
+input:checked+p {
+    text-decoration: line-through;
+    text-decoration-color: #BDB5BA;
+}
+
+
+.solid {
+    border-top: 1px solid #bbb;
+}
+
+input[type="text"] {
+    box-sizing: border-box;
+    width: 90%;
+    text-align: center;
+    border: none;
+    margin-bottom: 20px;
+    /*    box-shadow: inset 0 -3px 0 0 var(--polo-blue);*/
+}
+
+input[type="text"]:focus {
+    outline: none;
+}
+
+
+.add-button {
+    display: inline;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.round-button {
+    display: inline;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--polo-blue);
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+
+footer {
+    background-color: var(--secondary-color);
+    color: var(--polo-blue);
+    font-weight: 500;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
