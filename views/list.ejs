@@ -7,27 +7,22 @@
     </div>
 </div>
 <div class="container box">
-    <div class="row justify-content-center p-3">
-        <% if (newListItems.length > 0) { %>
-        <% newListItems.forEach(function(item){ %>
-        <div class="col-3">
-            <form action="/delete" method="post">
-                <div class="item p-2">
-                    <input class="px-5" type="checkbox" name="checkbox" value="<%=item._id%>" onChange="this.form.submit()" />
-                    <input type="hidden" name="listName" value="<%= listTitle %>"></input>
-                </div>
-            </form>
-        </div>
-        <div class="col-9">
-            <p class="px-5 h5 d-inline">
-                <%=  item.name %>
-            </p>
-        </div>
-        <% }); } else { %>
-        <div class="item py-2">
-            <p class="">None</p>
-        </div>
-        <%}%>
+    <div class="row p-3">
+        <ul class="list-group">
+            <% if (newListItems.length > 0) { %>
+            <% newListItems.forEach((item, index) => { %>
+            <li class="list-group-item p-3">
+                <form action="/delete" method="post">
+                    <input class="mx-3" type="checkbox" value="<%=item._id%>" name="checkbox" id="task-<%= index + 1 %>" onchange="this.form.submit()" />
+                    <input type="hidden" name="listName" value="<%= listTitle %>" />
+                    <label class="form-check-label h4" for="task-<%= index + 1 %>">
+                        <%= item.name %></label>
+                </form>
+            </li>
+            <% }); } else { %>
+            <li class="list-group-item text-center h4 p-4">No tasks</li>
+            <%}%>
+        </ul>
     </div>
     <hr class="solid">
     <div class="row">
